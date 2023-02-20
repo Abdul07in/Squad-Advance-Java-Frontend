@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript">
+	$(function(){
+		$("#btn1").click(function(){
+			$("#heading").append("This is appended ...");
+		});
+		$("#btn2").click(function(){
+			$("#heading").prepend("This is appended ...");
+		});
+	})
+	
+	/* pwd = /home/luser/majeed/files-main/Core Food Project/Advance Java */
+</script>
+<title>Append And Prepend</title>
+</head>
+<body>
+	<button id="btn1">Append</button>
+	<button id="btn2">Prepend</button>
+	<h3 id="heading" style="background-color: aqua;">This is Original line</h3>
+</body>
+</html>
