@@ -1,0 +1,7 @@
+1. Headings tags are form  <h1> to <h6> these tags give a bigger fonts
+2. Paragraph tag <p> used to write paragraph
+3. <br> for line break line
+4. &nbsp; for space
+5. &ensp for tab space
+6. <mark> for marking lines
+7. <hr> for line

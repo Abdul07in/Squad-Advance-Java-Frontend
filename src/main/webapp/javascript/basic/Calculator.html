@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Calculator</title>
+<script>
+	function add() {
+		var x = document.getElementById('display1').value;
+		var y = document.getElementById('display2').value;
+		if (x != "" && y != "") {
+			if (isNaN(x) || isNaN(y)) {
+				document.getElementById('answer').innerHTML = '<span style="color:red;">Please Enter a valid Number.</span>';
+			} else {
+				var a = parseInt(x);
+				var b = parseInt(y);
+				var ans = a + b;
+				document.getElementById('answer').innerHTML = ans;
+			}
+		} else {
+			document.getElementById('answer').innerHTML = '<span style="color:red;">All Feilds are mandatory.</span>';
+		}
+	}
+	function sub() {
+		var x = document.getElementById('display1').value;
+		var y = document.getElementById('display2').value;
+		if (x != "" && y != "") {
+			if (isNaN(x) || isNaN(y)) {
+				document.getElementById('answer').innerHTML = '<span style="color:red;">Please Enter a valid Number.</span>';
+			} else {
+				var a = parseInt(x);
+				var b = parseInt(y);
+				var ans = a - b;
+				document.getElementById('answer').innerHTML = ans;
+			}
+		} else {
+			document.getElementById('answer').innerHTML = '<span style="color:red;">All Feilds are mandatory.</span>';
+		}
+	}
+	function mul() {
+		var x = document.getElementById('display1').value;
+		var y = document.getElementById('display2').value;
+		if (x != "" && y != "") {
+			if (isNaN(x) || isNaN(y)) {
+				document.getElementById('answer').innerHTML = '<span style="color:red;">Please Enter a valid Number.</span>';
+			} else {
+				var a = parseInt(x);
+				var b = parseInt(y);
+				var ans = a * b;
+				document.getElementById('answer').innerHTML = ans;
+			}
+		} else {
+			document.getElementById('answer').innerHTML = '<span style="color:red;">All Feilds are mandatory.</span>';
+		}
+	}
+	function div() {
+		var x = document.getElementById('display1').value;
+		var y = document.getElementById('display2').value;
+		if (x != "" && y != "") {
+			if (isNaN(x) || isNaN(y)) {
+				document.getElementById('answer').innerHTML = '<span style="color:red;">Please Enter a valid Number.</span>';
+			} else {
+				var a = parseInt(x);
+				var b = parseInt(y);
+				var ans = a / b;
+				document.getElementById('answer').innerHTML = ans;
+			}
+		} else {
+			document.getElementById('answer').innerHTML = '<span style="color:red;">All Feilds are mandatory.</span>';
+		}
+	}
+</script>
+<style>
+body {
+	background-color: #212121;
+	color: white;
+	text-align: center;
+	font-size: 25px;
+	font-family: arial;
+	font-weight: 600;
+}
+
+button {
+	padding: 10px;
+	font-size: 20px;
+}
+
+input {
+	height: 30px;
+	width: 25%;
+	font-size: 20px;
+}
+</style>
+</head>
+<body>
+	<div>
+		<h2>Calculator</h2>
+		<input type="text" id="display1"> <input type="text"
+			id="display2">
+		<p id="answer">00</p>
+		<button onclick="add()">+</button>
+		<button onclick="sub()">-</button>
+		<button onclick="div()">/</button>
+		<button onclick="mul()">X</button>
+	</div>
+</body>
+</html>

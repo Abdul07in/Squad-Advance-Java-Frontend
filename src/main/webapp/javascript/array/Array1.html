@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	var i = 0;
+	function getData() {
+		var arr = [ "violet", "indigo", "blue", "yellow", "orange", "red" ];
+		if(i == arr.length)
+			i=0;
+		//for (var i = 0; i < arr.length; i++) {
+		document.getElementById('tb').innerHTML += "<tr style ='background-color:"+arr[i]+";'><td>"+ i + "</td><td>" + arr[i] + "</td></tr>";
+		//}
+		i++;
+	}
+</script>
+</head>
+<body>
+	<table border="2">
+		<tr>
+			<th>Index</th>
+			<th>Color</th>
+		</tr>
+		<tbody id="tb">
+		</tbody>
+	</table>
+	<button onclick="getData()">click</button>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<script type="text/javascript">
+		var s = "The boy is riding a bicycle , The boy is riding a bicycle ";
+		var a = s.replace("boy", "girl");
+		var b = s.replaceAll("The", "That");
+
+		document.write("<h3> s = " + s + "<br>a = " + a + "<br>b = " + b);
+
+		var d = a.toUpperCase();
+		var e = a.toLowerCase();
+
+		document.write("<h3> d = " + d + "<br>e = " + e + "</h3>");
+
+		var x = "		Coder Technology	  ";
+		document.write("<h3> Initial Length of x = " + x.length + "</h3>");
+		x = x.trim();
+		document.write("<h3> Length After trim of x = " + x.length + "</h3>");
+		
+		
+		var ch = s.charAt(9);
+		document.write("<h3> Char ch = "+ ch +"</h3>")
+	</script>
+</body>
+</html>

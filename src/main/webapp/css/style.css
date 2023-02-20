@@ -1,0 +1,84 @@
+body{
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background:linear-gradient(lightblue, blue);
+	background-repeat: no-repeat;
+}
+
+#container {
+	background:linear-gradient(black, gray);
+	height: 600px;
+	width: 300px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	border-radius: 20%;
+}
+
+@keyframes blink-red {
+	0% { 
+	background:linear-gradient(red, #f76f72);
+	
+	}
+100% {
+	background: linear-gradient(#f76f72, red);
+	
+}
+
+}
+@keyframes blink-yellow {
+	from { background:linear-gradient(yellow, lightyellow);}
+to {
+	background: linear-gradient(lightyellow, yellow);
+}
+
+}
+@keyframes blink-green {
+	from { background: linear-gradient(green, lightgreen);}
+to {
+	background: linear-gradient(lightgreen,green);
+}
+
+}
+#box1 {
+	background: linear-gradient(red, #f76f72);
+	height: 50px;
+	width: 50px;
+	padding: 50px;
+	border: 2px;
+	border-radius: 50%;
+	box-shadow: 15px 2px red;
+	text-align: center;
+	color: black;
+	text-shadow: 2px 2px 2px black;
+	animation: blink-red 3s ease infinite;
+}
+
+#box2 {
+	background: linear-gradient(yellow, lightyellow);
+	height: 50px; width : 50px; padding : 50px;
+	border: 2px;
+	border-radius: 50%;
+	box-shadow: 15px 2px #FFFF00;
+	text-align: center;
+	color: black;
+	text-shadow: 2px 2px 2px black;
+	animation: blink-yellow 6s ease infinite;
+}
+
+#box3 {
+	background: linear-gradient(green, lightgreen);
+	height: 50px; width : 50px; padding : 50px;
+	border: 2px;
+	border-radius: 50%;
+	box-shadow: 15px 2px green;
+	text-align: center;
+	color: black;
+	text-shadow: 2px 2px 2px black;
+	animation: blink-green 3s ease infinite;
+}
+

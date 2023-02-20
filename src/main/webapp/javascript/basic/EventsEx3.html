@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function happy() {
+		document.getElementById('emoji').src = "smile.png";
+	}
+	function sad() {
+		document.getElementById('emoji').src = "sad.png";
+	}
+</script>
+</head>
+<body style="text-align: center; background-color: black">
+	<img onmouseenter="happy()" onmouseleave="sad()" alt="smile"
+		src="smile.png" id="emoji">
+	<br>
+	<button onclick="happy()" style="height: 40px; width: 80px">Happy</button>
+	<button onclick="sad()" style="height: 40px; width: 80px">Sad</button>
+</body>
+</html>

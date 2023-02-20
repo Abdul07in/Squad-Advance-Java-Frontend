@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function changeSize() {
+		document.getElementById('box').style = "background-color: red; height: 150px; width: 150px";
+	}
+	function normal() {
+		document.getElementById('box').style = "background-color: yellow; height: 50px; width: 50px";
+	}
+</script>
+</head>
+<body>
+	<div onmouseenter="changeSize()" onmouseleave="normal()" id="box"
+		style="background-color: yellow; height: 50px; width: 50px"></div>
+</body>
+</html>

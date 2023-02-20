@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<!-- 
+JSON: Javascript Object Notation
+syntax : 
+{
+"name":value,
+"name":value
+}
+ -->
+<script type="text/javascript">
+	var emp = {
+		"empName" : "Deepika",
+		"empId" : 101,
+		"salary" : 15000.24,
+		"postGraduate" : true,
+		"contact" : {
+			"home" : 9856235147,
+			"personal" : 725486351
+		},
+		"skillset" : [ "Java", "Pyhton", "C++", "MySql" ]
+	}
+
+	function display() {
+		document.getElementById('heading').innerHTML = "Name : " + emp.empName
+				+ "<br>ID : " + emp.empId + "<br>Salary : " + emp.salary
+				+ "<br>Post Graudate : " + emp.postGraduate
+				+ "<br>Contact : 1]Home : " + emp.contact.home + " 2]Personal : "
+				+ emp.contact.personal + "<br>SkillSet : " + emp.skillset;
+	}
+</script>
+</head>
+<body>
+	<button onclick="display()">Show Details</button>
+	<h1 id="heading"></h1>
+</body>
+</html>

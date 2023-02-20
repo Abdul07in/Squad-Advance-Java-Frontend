@@ -1,0 +1,29 @@
+@charset "UTF-8";
+.parax {
+	text-decoration: underline;
+	letter-spacing: 2px;
+	word-spacing: 8px;
+	font-size: xx-large;
+	font-weight: bold;
+	font-family: cursive;
+}
+a {
+	color: black;
+	font-size: x-large;
+	text-decoration: none;
+}
+
+a:visited {
+	color: green;
+}
+
+a:hover {
+	color: yellow;
+}
+
+button {
+	border: 3px solid red;
+	background-color: lime;
+	border-radius: 10%; 
+	font-size: xx-large;
+}

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Javascript Values</title>
+
+<script>
+	function getName() {
+		var x = document.getElementById('input1').value;
+		document.getElementById('head').innerHTML = "Welcome " + x + ", have a nice day!!!";
+	}
+	function getHeading() {
+		var y = document.getElementById('head2').innerHTML;
+		document.getElementById('input2').value = y;
+	}
+</script>
+</head>
+<body>
+
+	
+		<h1 style="background-color: aqua; padding: 20px; text-align: center;" id="head"></h1>
+		Enter your name : <input type="text" id="input1" name="username">
+		<button onclick="getName()">Submit</button>
+		<hr>
+		<h1 style="background-color: aqua; padding: 20px; text-align: center;" id="head2">Today is Friday</h1>
+		Enter your name : <input type="text" id="input2" name="username">
+		<button onclick="getHeading()">Submit</button>
+	
+</body>
+</html>

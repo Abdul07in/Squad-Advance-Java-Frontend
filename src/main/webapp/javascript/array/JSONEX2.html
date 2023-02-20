@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	var info = {
+		"uname" : "",
+		"phone" : "",
+		"address" : ""
+	}
+	function sendData() {
+		var arr = document.getElementsByClassName("info");
+		info = {
+			"uname" : arr[0].value,
+			"phone" : arr[1].value,
+			"address" : arr[2].value
+		}
+	}
+	function showData() {
+		document.getElementById('heading').innerHTML = "Name : " + info.uname
+				+ "Phone : " + info.phone + " Address : " + info.address;
+	}
+</script>
+
+</head>
+<body>
+
+
+
+	<table>
+		<tr>
+			<th>Enter Name</th>
+			<td><input name="uname" type="text" id="uinp1" class="info"></td>
+		</tr>
+		<tr>
+			<th>Enter Phone Number</th>
+			<td><input name="unumber" type="text" id="uinp2" class="info"></td>
+		</tr>
+		<tr>
+			<th>Enter Address</th>
+			<td><input name="uaddress" type="text" id="uinp2" class="info"></td>
+		</tr>
+		<tr>
+			<td><button onclick="sendData()">submit</button></td>
+			<td><button onclick="showData()">show</button></td>
+		</tr>
+	</table>
+
+
+	<br>
+	<h1 id="heading"></h1>
+</body>
+</html>

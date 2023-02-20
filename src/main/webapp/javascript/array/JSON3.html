@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+#output {
+	display: none;
+	padding-top: 50px;
+	background-color: #212121;
+	color: #ddd;
+}
+
+#tab {
+	text-align: center;
+	width: 250px;
+	height: 100px;
+	font-weight: bold;
+	font-family: arial;
+	box-shadow: 1px 1px 1px white;
+}
+</style>
+<script type="text/javascript">
+	var arr = [ {
+		"id" : "",
+		"name" : "",
+		"subject" : ""
+	}, {
+		"id" : "",
+		"name" : "",
+		"subject" : ""
+	}, {
+		"id" : "",
+		"name" : "",
+		"subject" : ""
+	} ];
+	var count = 0;
+	var s = 0;
+	function sendData() {
+		var info = document.getElementsByClassName('info');
+		if (count == arr.length)
+			return alert('Data Full');
+
+		if (info[0].value.trim() == "" || info[1].value.trim() == ""
+				|| info[2].value.trim() == "")
+			return alert('please submit valid data');
+
+		arr[count].id = info[0].value;
+		arr[count].name = info[1].value;
+		arr[count].subject = info[2].value;
+		alert('Data Submited Successfully');
+		count++;
+	}
+	function showData() {
+		if (s == arr.length) {
+			return alert('All data is displayed');
+		}
+		if (arr[s].id == "")
+			return alert('No data found');
+		document.getElementById('output').style = "display:block";
+		var otab = document.getElementById('otab');
+
+		otab.innerHTML += "<tr><td>" + arr[s].id + "</td><td>" + arr[s].name
+				+ "</td><td>" + arr[s].subject + "</td></tr>";
+		s++;
+	}
+</script>
+</head>
+<body>
+	<table border="2" align="center" style="text-align: left;">
+		<tr>
+			<th>Enter Id</th>
+			<td><input name="uid" type="text" id="uinp1" class="info"></td>
+		</tr>
+		<tr>
+			<th>Enter Name</th>
+			<td><input name="uname" type="text" id="uinp2" class="info"></td>
+		</tr>
+		<tr>
+			<th>Enter Subject</th>
+			<td><input name="usub" type="text" id="uinp3" class="info"></td>
+		</tr>
+		<tr style="text-align: center;">
+			<td><button onclick="sendData()">submit</button></td>
+			<td><button onclick="showData()">show</button></td>
+		</tr>
+	</table>
+
+	<div id="output">
+		<table id="tab" border="2" align="center" style="text-align: center;">
+			<thead>
+				<tr>
+					<th>Id</th>
+					<th>Name</th>
+					<th>Subject</th>
+				</tr>
+			</thead>
+			<tbody id="otab">
+
+			</tbody>
+		</table>
+	</div>
+</body>
+</html>

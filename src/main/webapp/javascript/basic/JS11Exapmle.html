@@ -1,0 +1,18 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+ 	function display(x) {
+		document.getElementById('uname').innerHTML = x.value;
+	}
+</script>
+</head>
+<body>
+
+<h1>The name given : <span id="uname"></span> </h1>
+<input type="text" onkeydown="display(this)">
+</body>
+</html>

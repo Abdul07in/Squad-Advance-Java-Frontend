@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Prompt Demo</title>
+<script type="text/javascript">
+	function display() {
+		var x = prompt('Enter you name ');
+		if (x == "") {
+			document.getElementById('heading').innerHTML = "Please Enter your name";
+		} else if (x == null) {
+			document.getElementById('heading').innerHTML = "You have clicked cancel button";
+		} else {
+			document.getElementById('heading').innerHTML = "Welcome , " + x;
+		}
+	}
+</script>
+</head>
+<body>
+	<h1 id="heading"></h1>
+	<button onclick="display()">Click</button>
+</body>
+</html>
