@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript">
+	$(function() {
+		$("#btn1").click(function() {
+			$("#container").empty();
+		});
+		$("#btn2").click(function() {
+			$("#container").remove();
+		});
+		$("#btn3").click(function() {
+			location.reload(true);
+		});
+	});
+</script>
+<title>Remove And Empty</title>
+</head>
+<body>
+<button id="btn1">Empty</button>
+<button id="btn2">Remove</button>
+<button id="btn3">Show</button>
+
+<div id="container" style="background-color: yellow; height: 400px; width:200px;">
+<p style="background-color: red; height: 100px; width:100px"></p>
+<p style="background-color: green; height: 100px; width:100px"></p>
+<p style="background-color: blue; height: 100px; width:100px"></p>
+
+</div>
+</body>
+</html>

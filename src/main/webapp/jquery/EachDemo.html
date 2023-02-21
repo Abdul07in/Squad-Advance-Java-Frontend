@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript">
+	var colors = [ "red", "yellow", "blue", "pink" ];
+	$(function() {
+		$("#btn1").click(function() {
+			$.each(colors, function(index, color) {
+				$("#heading").append(index + " : " + color + "<br>");
+			});
+		});
+	});
+</script>
+<title>Insert title here</title>
+</head>
+<body style="background-color: #333; width:100vw;height: 100vh">
+	<button id="btn1">Fetch Array</button>
+	<h3 id="heading" style="background-color: lightblue; padding: 5px ; margin: 20px"></h3>
+</body>
+</html>

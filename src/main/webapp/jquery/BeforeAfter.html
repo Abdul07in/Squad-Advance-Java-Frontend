@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript">
+	$(function() {
+
+		$("#btn1").click(function() {
+			$("#heading").before(" This Line is added Before");
+		});
+		$("#btn2").click(function() {
+			$("#heading").after(" This Line is added Afters");
+		});
+	});
+</script>
+<title>Before And After</title>
+</head>
+<body>
+	<button id="btn1">Before</button>
+	<button id="btn2">After</button>
+	<h3 id="heading" style="background-color: aqua;">This is Original
+		line</h3>
+</body>
+</html>

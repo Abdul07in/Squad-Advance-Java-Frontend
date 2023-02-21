@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript">
+	$(function() {
+		$("#para").on({
+			click:function(){
+				$(this).text("You have single clicked");
+			},
+			dblclick:function(){
+				$(this).text("You have double clicked");
+			},
+			mouseenter:function(){
+				$(this).css({
+					"font-size":"20px",
+					"background-color":"red"
+				});
+			},
+			mouseleave:function(){
+				$(this).css({
+					"font-size":"10px",
+					"background-color":"cyan"
+				});
+			}
+		});
+	});
+</script>
+<title>On Demo</title>
+</head>
+<body>
+<p id="para" style="background-color: aqua; height:100px"></p>
+</body>
+</html>

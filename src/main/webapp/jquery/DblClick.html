@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript">
+	$(function() {
+		$("#para").click(function() {
+			$(this).animate({"text-align":"center", "font-size":"10px"});
+			$(this).text("You have single click");
+		});
+		$("#para").dblclick(function() {
+			$(this).animate({"text-align":"center", "font-size":"20px"});
+			$(this).text("You have double click");
+		});
+	});
+</script>
+<title>Double Click</title>
+</head>
+<body>
+<p id="para" style="background-color: aqua; height:100px"></p>
+</body>
+</html>
