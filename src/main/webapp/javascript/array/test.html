@@ -1,37 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script>
-      let result;
 
-      function searchElement() {
-        document.getElementById('defination1').innerHTML = "";
-        var val = document.getElementById('inp').value;
-        document.getElementById('word').innerHTML = val;
-        fetch("https://api.dictionaryapi.dev/api/v2/entries/en/" + val).then(response => response.json()).then(data => {
-          result = data;
-          for (var i = 0; i < result[0].meanings[0].definitions.length; i++) {
-            document.getElementById('defination1').innerHTML += i + " " + result[0].meanings[0].definitions[i].definition + " < br > ";
-          }
-        }).catch(error => {
-          console.error(error);
-        });
-      }
-    </script>
-    <title>Word</title>
-  </head>
-  <body>
-    <h1>Word Api </h1>
-    <hr>
-    <input type="text" id="inp" placeholder="Enter text to search">
-    <button id="btn" onclick="searchElement()">search</button>
-    <div class="result">
-      <p id="word"></p>
-      <p id="defination1"></p>
-      <p id="defination2"></p>
-    </div>
-  </body>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    function searchElement() {
+      document.getElementById('defination1').innerHTML = "";
+      var val = document.getElementById('inp').value;
+      document.getElementById('word').innerHTML = val;
+      fetch("https://api.dictionaryapi.dev/api/v2/entries/en/" + val).then(response => response.json()).then(data => {
+        for (var i = 0; i < data[0].meanings[0].definitions.length; i++) {
+          document.getElementById('defination1').innerHTML += i + " " + data[0].meanings[0].definitions[i].definition + " < br > ";
+        }
+      }).catch(error => {
+        console.error(error);
+      });
+    }
+  </script>
+  <title>Word</title>
+</head>
+
+<body>
+  <h1>Word Api </h1>
+  <hr>
+  <input type="text" id="inp" placeholder="Enter text to search">
+  <button id="btn" onclick="searchElement()">search</button>
+  <div class="result">
+    <p id="word"></p>
+    <p id="defination1"></p>
+    <p id="defination2"></p>
+  </div>
+</body>
+
 </html>
