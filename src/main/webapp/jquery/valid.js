@@ -1,9 +1,8 @@
-/**
- * 
- */
+const submitButton = document.getElementById('btn');
+submitButton.disabled = true;
 
-let count = 0;
-document.getElementById('btn').disabled = true;
+let uname, uemail, uaddress, uphone = false;
+
 function checkName(x) {
 	var flag = false;
 	var x = x.value;
@@ -16,16 +15,19 @@ function checkName(x) {
 		}
 	}
 	if (flag) {
-		document.getElementById('err').style = "color:green";
-		document.getElementById('err').innerHTML = "Valid Name";
-		count = 1;
+		document.getElementById('nameHelp').classList.remove("text-danger");
+		document.getElementById('nameHelp').classList.add("text-success");
+		document.getElementById('nameHelp').innerHTML = "* Valid Name";
+		uname = true;
 	} else {
-		document.getElementById('err').style = "color:red";
-		document.getElementById('err').innerHTML = "InValid Name";
-		count = 0;
+		document.getElementById('nameHelp').classList.remove("text-success");
+		document.getElementById('nameHelp').classList.add("text-danger");
+		document.getElementById('nameHelp').innerHTML = "* Please Enter a Valid Name";
+		uname = false;
 	}
-	console.log(count)
+	validateForm();
 }
+
 function checkNumber(x) {
 	var flag = false;
 	var x = x.value;
@@ -39,21 +41,25 @@ function checkNumber(x) {
 	}
 	if (flag) {
 		if (x.length != 10) {
-			document.getElementById('enum').style = "color:red";
-			document.getElementById('enum').innerHTML = "Please Enter a 10 digit number";
+			document.getElementById('phoneHelp').classList.remove("text-success");
+			document.getElementById('phoneHelp').classList.add("text-danger");
+			document.getElementById('phoneHelp').innerHTML = "* Please Enter a 10 digit number";
+			uphone = false;
 		} else {
-			document.getElementById('enum').style = "color:green";
-			document.getElementById('enum').innerHTML = "Valid Number";
+			document.getElementById('phoneHelp').classList.remove("text-danger");
+			document.getElementById('phoneHelp').classList.add("text-success");
+			document.getElementById('phoneHelp').innerHTML = "Valid Phone Number";
+			uphone = true;
 		}
-		if (count == 1)
-			count = 2;
 	} else {
-		document.getElementById('enum').style = "color:red";
-		document.getElementById('enum').innerHTML = "InValid Number";
-			count = 1;
+		document.getElementById('phoneHelp').classList.remove("text-success");
+		document.getElementById('phoneHelp').classList.add("text-danger");
+		document.getElementById('phoneHelp').innerHTML = "* Please Enter a Valid Phone Number";
+		uphone = false;
 	}
-	console.log(count);
+	validateForm();
 }
+
 function checkEmail(x) {
 	var flag = false;
 	var x = x.value;
@@ -61,16 +67,17 @@ function checkEmail(x) {
 		flag = true;
 	}
 	if (flag) {
-		document.getElementById('eml').style = "color:green";
-		document.getElementById('eml').innerHTML = "Valid Email";
-		if (count == 2)
-			count = 3;
+		document.getElementById('emailHelp').classList.remove("text-danger");
+		document.getElementById('emailHelp').classList.add("text-success");
+		document.getElementById('emailHelp').innerHTML = "Valid Email";
+		uemail = true;
 	} else {
-		document.getElementById('eml').style = "color:red";
-		document.getElementById('eml').innerHTML = "InValid Email";
-			count = 2;
-			}
-	console.log(count)
+		document.getElementById('emailHelp').classList.remove("text-success");
+		document.getElementById('emailHelp').classList.add("text-danger");
+		document.getElementById('emailHelp').innerHTML = "* Please Enter a Valid Email";
+		uemail = false;
+	}
+	validateForm();
 }
 
 function checkAddress(x) {
@@ -80,14 +87,22 @@ function checkAddress(x) {
 		flag = true;
 	}
 	if (flag) {
-		document.getElementById('eml').style = "color:green";
-		document.getElementById('eml').innerHTML = "Valid Email";
-		if (count == 3)
-			count = 4;
+		document.getElementById('addressHelp').classList.remove("text-danger");
+		document.getElementById('addressHelp').classList.add("text-success");
+		document.getElementById('addressHelp').innerHTML = "* Valid Home Address";
+		uaddress = true;
 	} else {
-		document.getElementById('eml').style = "color:red";
-		document.getElementById('eml').innerHTML = "InValid Email";
-			count = 3;
-			}
-	console.log(count)
+		document.getElementById('addressHelp').classList.remove("text-success");
+		document.getElementById('addressHelp').classList.add("text-danger");
+		document.getElementById('addressHelp').innerHTML = "* Please Enter a Valid Home Address";
+		uaddress = false;
+	}
+	validateForm();
+}
+
+function validateForm() {
+	if (uname && uemail && uphone && uaddress)
+		submitButton.disabled = false;
+	else
+		submitButton.disabled = true;
 }
