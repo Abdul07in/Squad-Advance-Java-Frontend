@@ -1,0 +1,118 @@
+@import url("https://fonts.googleapis.com/css2?family=Asap:wght@400;500;600;700&display=swap");
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: asap;
+    transition: all 0.4 ease;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    background-color: #222831;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.main-container {
+    background-color: #393E46;
+    padding: 10px;
+    margin: 10px;
+    width: 70%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 5px 10px black;
+}
+
+h1 {
+    text-align: center;
+    font-family: asap;
+    font-weight: 800;
+    color: #00ADB5;
+    background-color: #393E46;
+    padding: 15px;
+    margin: 10px;
+    text-shadow: 2px 4px black;
+    border-radius: 10px;
+}
+
+.search-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.input-box {
+    width: 100%;
+    padding: 10px;
+    margin: 5px;
+    border: none;
+    background-color: #00ADB5;
+    color: #EEEEEE;
+    font-family: asap;
+    border-radius: 10px;
+    text-indent: 10px;
+    box-shadow: 5px 10px black;
+    font-size: 15px;
+}
+
+#btn {
+    padding: 8px;
+    background: transparent;
+    border: none;
+    color: #EEEEEE;
+    position: absolute;
+    right: 15px;
+}
+
+i {
+    font-size: 20px;
+}
+
+.result {
+    width: 100%;
+    background: #393E46;
+    color: #EEEEEE;
+    border-radius: 10px;
+    padding: 10px;
+    overflow: visible;
+}
+
+#word {
+    text-align: center;
+    text-transform: capitalize;
+    padding-top: 10px;
+}
+
+#defination {
+    padding: 20px;
+}
+
+li {
+    padding-top: 15px;
+}
+
+@media only screen and (max-width: 410px) {
+    body {
+        width: 100%;
+        height: 100%;
+    }
+
+    .main-container {
+        background-color: #393E46;
+        padding: 10px;
+        margin: 10px;
+        width: 90%;
+        height: auto;
+        border-radius: 10px;
+        box-shadow: 5px 10px black;
+    }
+}
