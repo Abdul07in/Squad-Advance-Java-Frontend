@@ -78,6 +78,7 @@ i {
 }
 
 .result {
+    position: relative;
     width: 100%;
     background: #393E46;
     color: #EEEEEE;
@@ -98,6 +99,24 @@ i {
 
 li {
     padding-top: 15px;
+}
+
+.title-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+#play {
+    margin-top: 12px;
+    margin-left: 25px;
+    background: transparent;
+    border: none;
+    color: #EEEEEE;
+    cursor: pointer;
+
 }
 
 @media only screen and (max-width: 410px) {

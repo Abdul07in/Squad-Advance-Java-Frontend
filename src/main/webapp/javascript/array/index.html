@@ -9,6 +9,7 @@
     integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/x-icon" href="https://img.icons8.com/plasticine/256/book.png">
   <title>Word</title>
 </head>
 
@@ -21,7 +22,13 @@
       <button id="btn" onclick="searchElement()"><i class="fa-sharp fa-solid fa-magnifying-glass"></i></button>
     </div>
     <div class="result">
-      <p id="word"></p>
+      <audio id="myAudio">
+        <source src="" type="audio/mpeg">
+      </audio>
+      <div class="title-container">
+        <p id="word"></p>
+        <button id="play" onclick="playAudio()"><i class="fa-solid fa-volume-high"></i></button>
+      </div>
       <p>
       <ol id="defination">
 
@@ -30,17 +37,44 @@
     </div>
   </div>
   <script>
+    var audioTag = document.getElementById("myAudio");
+    var audio;
+    const playButton = document.getElementById('play');
+
+    playButton.style = "display:none;"
+
+    function playAudio() {
+      audioTag.play();
+    }
+
     function searchElement() {
-      document.getElementById('defination').innerHTML = "";
       var val = document.getElementById('inp').value;
+      audioTag.src = "";
+
+      document.getElementById('defination').innerHTML = "";
       document.getElementById('word').innerHTML = val;
+
+
       fetch("https://api.dictionaryapi.dev/api/v2/entries/en/" + val).then(response => response.json()).then(data => {
+
+        for (let index = 0; index < data[0].phonetics.length; index++) {
+          if (data[0].phonetics[index].audio != null || data[0].phonetics[index].audio != "") {
+            audio = data[0].phonetics[index].audio;
+          }
+        }
+
         for (var i = 0; i < data[0].meanings[0].definitions.length; i++) {
           document.getElementById('defination').innerHTML += "<li>" + data[0].meanings[0].definitions[i].definition + "</li>";
         }
+
+        playButton.style = "display:block;"
+        audioTag.src = audio;
+
       }).catch(error => {
         console.error(error);
       });
+
+
     }
   </script>
 </body>
