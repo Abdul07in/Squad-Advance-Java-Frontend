@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script type="text/javascript" src="jquery.js"></script>
+<title>Value Demo</title>
+</head>
+<body>
+	<input type="text" id="uname">
+	<button id="btn1">set</button>
+	<button id="btn2">get</button>
+	
+	<script type="text/javascript">
+		$(function(){
+			$("#btn1").click(function(){
+				$("#uname").val("Hello World");
+			});
+			$("#btn2").click(function(){
+				var s = $("#uname").val();
+				alert("The value recived is " + s);
+			});
+		});
+	</script>
+</body>
+</html>
